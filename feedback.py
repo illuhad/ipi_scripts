@@ -2,9 +2,18 @@ from ipi_common import *
 import os
 import os.path
 
+# Subject of feedbackmail
 subject = "IPI-Übungsgruppe: Feedback Zettel 2"
+# Your name
 tutor_name = "Aksel"
+# The thunderbird identity from which the mail will be sent
+# Apparently, you have to find out the correct identity number
+# by trial and error...
 sender_id = "id2"
+
+thunderbird_command="thunderbird"
+
+# This script starts thunderbird using the command line arguments as follows
 #thunderbird.exe -compose "to='email@domain.com',subject='Some Subject',preselectid='id1',body='Message Body',attachment='File.txt'"
 
 directories = []
@@ -29,5 +38,5 @@ for directory in directories:
     recipient_string += r + ","
   
   compose_arg="subject='"+subject+"',preselectid='"+sender_id+"',to='"+recipient_string+"',"+"body='"+message_body+"'"
-  subprocess.call(["thunderbird","-compose",compose_arg])
+  subprocess.call([thunderbird_command,"-compose",compose_arg])
   i=input("Press enter to proceed to next feedback")

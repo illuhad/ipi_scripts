@@ -3,6 +3,9 @@ import os
 import os.path
 import sys
 
+texteditor="gedit"
+filemanager="nautilus"
+
 def grade_task(task_num):
 
   directories = []
@@ -13,8 +16,8 @@ def grade_task(task_num):
     task_file = os.path.join(directory, "feedback_"+str(task_num)+".txt")
     print("Entering " + directory)
     print("Accessing " + task_file)
-    subprocess.call(["nautilus", directory])
-    subprocess.call(["gedit", task_file, "-w"])
+    subprocess.call([filemanager, directory])
+    subprocess.call([texteditor, task_file, "-w"])
     
 if(len(sys.argv) == 2):
   grade_task(sys.argv[1])
