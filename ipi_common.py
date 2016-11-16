@@ -142,9 +142,9 @@ def get_author_name(target_directory):
           print("Author "+str(i+1)+" is uncertain - best guess is: "+author_match[i])
           i = input("Accept (press 'a' to enter alternative)? [a/y/N]")
           if(i == 'y' or i=='Y'):
-            authors[0] = author_match[0]
+            authors[i] = author_match[i]
           elif(i == 'a' or i=='A'):
-            authors[0] = input("Enter alternative: ")
+            authors[i] = input("Enter alternative: ")
         else:
           authors[i] = author_match[i]
           
