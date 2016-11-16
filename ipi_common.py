@@ -140,10 +140,10 @@ def get_author_name(target_directory):
         result_score = author_match[2 + i]
         if(result_score <= next_lowest_score):
           print("Author "+str(i+1)+" is uncertain - best guess is: "+author_match[i])
-          i = input("Accept (press 'a' to enter alternative)? [a/y/N]")
-          if(i == 'y' or i=='Y'):
+          c = input("Accept (press 'a' to enter alternative)? [a/y/N]")
+          if(c == 'y' or c=='Y'):
             authors[i] = author_match[i]
-          elif(i == 'a' or i=='A'):
+          elif(c == 'a' or c=='A'):
             authors[i] = input("Enter alternative: ")
         else:
           authors[i] = author_match[i]
